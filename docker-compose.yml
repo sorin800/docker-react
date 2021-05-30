@@ -1,0 +1,11 @@
+version: '3'
+services:
+   web:
+      build:
+         context: .
+         dockerfile: Dockerfile.dev
+      ports:
+         - "3000:3000"
+      volumes:
+         - /home/app/node_modules # it says do not map any folder at this path
+         - .:/home/app # map everything from local pc . : to what is in /home/app in container
